@@ -96,17 +96,21 @@ Response for "ATMs nearby" request is itself a resource with the following URL:
 
 ### ATM info
 Method: `GET /service-points/atm/{id}`
+
 Response: ATM representation
 
 ### ATM info update
 Method: `PUT /service-points/atm/{id}`
+
 Request: ATM representation
 
 ### List of all ATMs
 Method: `GET /service-points/atms`
+
 Response: ATMs collection representation
 
 ### List of ATMs nearby
 Method: `GET /service-points/atms/nearest-atms?lat={lat}?lng={lng}?radius={radius}`
+
 Response: ATMs collection representation
 
