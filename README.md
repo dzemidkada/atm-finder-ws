@@ -1,6 +1,10 @@
 # atm-finder-ws
 
-# ATM Finder WEB-service
+# Table of contents
+1. [ATM Finder WEB-service](#api)
+2. [Hello world app](#hello-world)
+
+# ATM Finder WEB-service <a name="api"></a>
 High-loaded WEB-service API and implementation for High-loaded WEB-Services university subject.
 
 The service provides a user with information about ATMs nearby.
@@ -114,7 +118,7 @@ Method: `GET /service-points/atms/nearest-atms?lat={lat}?lng={lng}?radius={radiu
 
 Response: ATMs collection representation
 
-# Hello World app
+# Hello World app <a name="hello-world"></a>
 
 ## Build the server
 
