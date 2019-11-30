@@ -114,3 +114,37 @@ Method: `GET /service-points/atms/nearest-atms?lat={lat}?lng={lng}?radius={radiu
 
 Response: ATMs collection representation
 
+# Hello World app
+
+## Build the server
+
+Dockerfile: `./cppweb/cppbox/Dockerfile`.
+
+Build an image
+```{bash}
+docker build -t cppbox ./cppweb/cppbox/.
+```
+
+Run a container (it's better to set volume folder)
+```{bash}
+docker run -v /path/to/repo/atm-finder-ws/cppweb:/usr/src/cppweb -ti cppbox:latest bash
+```
+
+Put 'crow_all.h' (use the only release from the official Crow repo) file into the following folder:
+```{bash}
+/usr/src/cppweb
+```
+
+Go to the hello_world app folder and build
+```{bash}
+cd /usr/src/cppweb/hello_world
+mkdir build && cd build
+cmake ..
+make
+```
+
+## Run the server
+Run the container (we also specify PORT variable this time and open a port):
+```{bash}
+docker run -v /path/to/repo/atm-finder-ws/cppweb:/usr/src/cppweb -p 8888:8888 -e PORT=8888 cppbox:latest /usr/src/cppweb/hello_world/build/hello_world
+```
