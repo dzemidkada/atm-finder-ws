@@ -125,7 +125,7 @@ Build an image
 docker build -t cppbox ./cppweb/cppbox/.
 ```
 
-Run a container (it's better to set volume folder)
+Run a container
 ```{bash}
 docker run -v /path/to/repo/atm-finder-ws/cppweb:/usr/src/cppweb -ti cppbox:latest bash
 ```
@@ -144,7 +144,32 @@ make
 ```
 
 ## Run the server
+
 Run the container (we also specify PORT variable this time and open a port):
 ```{bash}
 docker run -v /path/to/repo/atm-finder-ws/cppweb:/usr/src/cppweb -p 8888:8888 -e PORT=8888 cppbox:latest /usr/src/cppweb/hello_world/build/hello_world
+```
+
+## Updating the image
+
+Run the container in the separate window:
+```{bash}
+docker run -ti cppbox:latest bash
+```
+NOTE: the is no built files or the source code from repo there!
+
+Copy all the needed files into the container:
+```{bash}
+docker cp . RUNNING_CONTAINER_ID:/usr/src/cppweb
+```
+
+Commit the changes:
+```{bash}
+docker commit RUNNING_CONTAINER_ID hello_world:latest
+```
+As a result you get the app image.
+
+You can build it using an updated Docker file using the following command:
+```{bash}
+docker build -t hello_world ./cppweb/hello_world/.
 ```
