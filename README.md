@@ -20,27 +20,26 @@ ATM point of service. ATM properties:
 Using **HAL+GeoJSON** format a sample ATM may look like:
 ```{json}
 {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-            102.0, # lat
-            0.5 # lng
-        ]
-      },
-      "properties": {
-        "fee": 0.1,
-        "cash_amount": 13135.12,
-        "available": "True",
-        "remote": "False",
-        "secure": "False"
-      },
-      "_links": {
-        "self": {
-            "href": "/service-points/atm/23"
-        }
-      }
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+        102.0, # lat
+        0.5 # lng
+    ]
+  },
+  "properties": {
+    "fee": 0.1,
+    "cash_amount": 13135.12,
+    "available": "True",
+    "remote": "False",
+    "secure": "False"
+  },
+  "_links": {
+    "self": {
+        "href": "/service-points/atm/23"
     }
+  }
 }
 ```
 
@@ -56,19 +55,18 @@ Collection of all ATMs has the following URL:
 
 ```{json}
 {
-      "type": "FeatureCollection",
-      "features": [
-        ATM-1-json-representation,
-        ATM-2-json-representation,
-        ...
-        ATM-N-json-representation,
-      ],
-      "_links": {
-        "self": {
-            "href": "/service-points/atms"
-        }
-      }
+  "type": "FeatureCollection",
+  "features": [
+    ATM-1-json-representation,
+    ATM-2-json-representation,
+    ...
+    ATM-N-json-representation,
+  ],
+  "_links": {
+    "self": {
+        "href": "/service-points/atms"
     }
+  }
 }
 ```
 
@@ -77,22 +75,21 @@ Response for "ATMs nearby" request is itself a resource with the following URL:
 
 ```{json}
 {
-      "type": "FeatureCollection",
-      "features": [
-        ATM-1-json-representation,
-        ATM-2-json-representation,
-        ...
-        ATM-N-json-representation,
-      ],
-      "_links": {
-        "self": {
-            "href": "/service-points/atms/nearest-atms\
-              ?lat={lat}\
-              ?lng={lng}\
-              ?radius={radius}"
-        }
-      }
+  "type": "FeatureCollection",
+  "features": [
+    ATM-1-json-representation,
+    ATM-2-json-representation,
+    ...
+    ATM-N-json-representation,
+  ],
+  "_links": {
+    "self": {
+        "href": "/service-points/atms/nearest-atms\
+          ?lat={lat}\
+          ?lng={lng}\
+          ?radius={radius}"
     }
+  }
 }
 ```
 

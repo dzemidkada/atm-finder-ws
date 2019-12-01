@@ -1,0 +1,117 @@
+[
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+            53.933529,
+            27.652355
+        ]
+      },
+      "properties": {
+        "fee": 0.01,
+        "cash_amount": 50000,
+        "available": "True",
+        "remote": "False",
+        "secure": "True",
+        "address": "ул. Петра Мстиславца д.11, Минск",
+      },
+      "_links": {
+        "self": {
+            "href": "/service-points/atm/1"
+        }
+      }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+          53.933377,
+          27.651454
+      ]
+    },
+    "properties": {
+      "fee": 0.02,
+      "cash_amount": 10000,
+      "available": "True",
+      "remote": "True",
+      "secure": "True",
+      "address": "улица Калиновского 66а, Минск 220086",
+    },
+    "_links": {
+      "self": {
+          "href": "/service-points/atm/2"
+      }
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        53.930493,
+        27.635404
+      ]
+    },
+    "properties": {
+      "fee": 0.02,
+      "cash_amount": 1340,
+      "available": "False",
+      "remote": "False",
+      "secure": "True",
+      "address": "проспект Независимости 117, Минск 220114",
+    },
+    "_links": {
+      "self": {
+          "href": "/service-points/atm/3"
+      }
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        53.936344,
+        27.582620
+      ]
+    },
+    "properties": {
+      "fee": 0.00,
+      "cash_amount": 51250,
+      "available": "True",
+      "remote": "False",
+      "secure": "True",
+      "address": "ул. Максима Богдановича 120б, Минск",
+    },
+    "_links": {
+      "self": {
+          "href": "/service-points/atm/4"
+      }
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        53.920863,
+        27.498933
+      ]
+    },
+    "properties": {
+      "fee": 0.03,
+      "cash_amount": 9124,
+      "available": "True",
+      "remote": "False",
+      "secure": "True",
+      "address": "проспект Пушкина 81, Минск",
+    },
+    "_links": {
+      "self": {
+          "href": "/service-points/atm/5"
+      }
+    }
+  }
+]
