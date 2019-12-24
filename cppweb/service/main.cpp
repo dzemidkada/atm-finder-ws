@@ -1,5 +1,7 @@
+#include <string>
+#include <iostream>
+#include <filesystem>
 #include "crow_all.h"
-
 
 void send_file(crow::response& res, std::string filename, std::string content_type) {
     std::ifstream in("../public/" + filename, std::ifstream::in);
@@ -17,6 +19,8 @@ void send_file(crow::response& res, std::string filename, std::string content_ty
 }
 
 void send_html(crow::response& res, std::string filename) {
+    std::cout << "filename = " << filename << "\n";
+
     send_file(res, filename + ".html", "text/html");
 }
 
@@ -37,6 +41,11 @@ int main(int argc, char* argv[]) {
 
     CROW_ROUTE(app, "/")
         ([](const crow::request& req, crow::response& res){
+            std::string path = "/usr/src/cppweb/public";
+            for (const auto & entry : std::filesystem::directory_iterator(path)) {
+                std::cout << entry.path() << std::endl;
+            }
+
             send_html(res, "index");
         });
 
