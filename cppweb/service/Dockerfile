@@ -1,25 +1,9 @@
-FROM gcc:9.2
+FROM gcc_base:latest as build
 
-# Install dependencies
+ADD ./src /usr/cppweb/src
 
-RUN apt-get clean
-RUN apt-get -qq update
-RUN apt-get -qq upgrade
-RUN apt-get -qq install cmake
+WORKDIR /usr/cppweb/build
+RUN cmake ../src && \
+    cmake --build .
 
-RUN apt-get -qq install libboost-all-dev=1.62.0.1
-RUN apt-get -qq install build-essential libtcmalloc-minimal7 && \
-    ln -s /usr/lib/libtcmalloc-minimal.so.4 /usr/lib/libtcmalloc-minimal.so
-
-# Copy files
-
-RUN mkdir /usr/src/cppweb
-COPY . /usr/src/cppweb
-
-# Build service
-
-WORKDIR /usr/src/cppweb
-RUN mkdir build && \
-    cd build && \
-    cmake .. && \
-    make
+ENTRYPOINT ["/usr/cppweb/build/atm_service"]
