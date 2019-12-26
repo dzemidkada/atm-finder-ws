@@ -41,28 +41,26 @@ int main(int argc, char* argv[]) {
 
     CROW_ROUTE(app, "/")
         ([](const crow::request& req, crow::response& res){
-            std::string path = "/usr/src/cppweb/public";
-            for (const auto & entry : std::filesystem::directory_iterator(path)) {
-                std::cout << entry.path() << std::endl;
-            }
-
-            send_html(res, "index");
+            std::cout << "Service got a new request!\n";
+            res.code = 200;
+            res.write("Hello world");
+            res.end();
         });
 
-    CROW_ROUTE(app, "/styles/<string>")
-        ([](const crow::request& req, crow::response& res, std::string filename){
-            send_style(res, filename);
-        });
-
-    CROW_ROUTE(app, "/scripts/<string>")
-        ([](const crow::request& req, crow::response& res, std::string filename){
-            send_script(res, filename);
-        });
-
-    CROW_ROUTE(app, "/images/<string>")
-        ([](const crow::request& req, crow::response& res, std::string filename){
-            send_image(res, filename);
-        });
+//    CROW_ROUTE(app, "/styles/<string>")
+//        ([](const crow::request& req, crow::response& res, std::string filename){
+//            send_style(res, filename);
+//        });
+//
+//    CROW_ROUTE(app, "/scripts/<string>")
+//        ([](const crow::request& req, crow::response& res, std::string filename){
+//            send_script(res, filename);
+//        });
+//
+//    CROW_ROUTE(app, "/images/<string>")
+//        ([](const crow::request& req, crow::response& res, std::string filename){
+//            send_image(res, filename);
+//        });
 
     char* port = getenv("PORT");
     uint16_t iport = static_cast<uint16_t>(port != NULL ? std::stoi(port) : 18018);

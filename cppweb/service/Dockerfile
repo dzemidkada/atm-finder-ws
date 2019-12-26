@@ -1,4 +1,4 @@
-FROM gcc_base:latest as build
+FROM gcc_base:latest
 
 ADD ./src /usr/cppweb/src
 

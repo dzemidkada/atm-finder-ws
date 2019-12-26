@@ -1,12 +1,30 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
 phantom:
-  address: 192.168.0.101:8888 # [Target's address]:[target's port]
-  uris:
-    - "/"
-  header_http: "1.1"
+  address: 192.168.131.209:9999
   load_profile:
-    load_type: rps # schedule load by defining requests per second
-    schedule: line(5, 10, 5s) # starting from 1rps growing linearly to 10rps during 10 minutes
-console:
-  enabled: true # enable console output
+    load_type: rps
+    schedule: line(1, 100, 5m)
+  uris:
+    - /
 telegraf:
-  enabled: false
+  enabled: true
+
+#phantom:
+#  address: 143.16.224.91:8888 # [Target's address]:[target's port]
+#  uris:
+#    - "/"
+#  header_http: "1.1"
+#  load_profile:
+#    load_type: rps # schedule load by defining requests per second
+#    schedule: line(5, 10, 5s) # starting from 1rps growing linearly to 10rps during 10 minutes
+#console:
+#  enabled: true # enable console output
+#telegraf:
+#  enabled: false
+#overload:
+#  enabled: true
+#  package: yandextank.plugins.DataUploader
+#  token_file: "token.txt"
