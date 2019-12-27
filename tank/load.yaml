@@ -1,0 +1,13 @@
+overload:
+  enabled: true
+  package: yandextank.plugins.DataUploader
+  token_file: "token.txt"
+phantom:
+  address: 192.168.56.1
+  load_profile:
+    load_type: rps
+    schedule: step(5, 500, 10, 10)
+  uris:
+    - "/hello-world"
+telegraf:
+  enabled: true
