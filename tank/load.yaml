@@ -9,5 +9,6 @@ phantom:
     schedule: step(5, 500, 10, 10)
   uris:
     - "/hello-world"
+  instances: 10
 telegraf:
   enabled: true
