@@ -1,0 +1,5 @@
+<Monitoring>
+  <Host address="137.182.193.176" interval="1" username="dzemidka.d@pg.com">
+    <CPU/> <Kernel/> <Net/> <System/> <Memory/> <Disk/> <Netstat /> <Nstat/>
+  </Host>
+</Monitoring>

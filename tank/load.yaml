@@ -3,12 +3,15 @@ overload:
   package: yandextank.plugins.DataUploader
   token_file: "token.txt"
 phantom:
-  address: 192.168.56.1
+  address: 137.182.193.176:8080
   load_profile:
     load_type: rps
-    schedule: step(5, 500, 10, 10)
+    schedule: step(5, 300, 10, 10)
   uris:
     - "/hello-world"
-  instances: 10
 telegraf:
+  config: monitoring.xml
   enabled: true
+  kill_old: false
+  package: yandextank.plugins.Telegraf
+  ssh_timeout: 30s
